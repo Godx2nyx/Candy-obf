@@ -11,7 +11,7 @@
     "lex": "npm run build && node dist/cli/lex.js",
     "parse": "npm run build && node dist/cli/parse.js",
     "obfuscate": "npm run build && node dist/cli/obfuscate.js",
-    "start": "node dist/cli/lex.js"
+    "start": "node dist/src/server.js"
   },
   "keywords": [
     "luau",
