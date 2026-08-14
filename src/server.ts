@@ -19,7 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -123,15 +123,5 @@ app.post("/api/obfuscate", (req: express.Request, res: express.Response) => {
 });
 
 app.listen(PORT, () => {
-  const url = `http://localhost:${PORT}`;
-  console.log(`\nClyde Obfuscator Server running at: ${url}`);
-  console.log("Press CTRL+C to terminate.\n");
-
-  exec(`start ${url}`, (err) => {
-    if (err) {
-      console.log(`Note: Failed to open browser automatically. Please navigate manually to ${url}`);
-    } else {
-      console.log(`Browser automatically opened at ${url}`);
-    }
-  });
+  console.log(`\nClyde Obfuscator Server running at port: ${PORT}`);
 });
