@@ -3745,18 +3745,25 @@ export function generateRegVM(chunk: RegBytecodeChunk, options: RegVMGenOptions 
       xorKey,
       invSbox,
       checksum,
-      chunkName: "Tawin",
+      chunkName: "Melon Obfuscator",
       rng,
     });
     console.log(`[RegVM] Blob: final output = ${output.length} chars`);
   }
 
   if (!options._noWatermark) {
-    const art = [
-      `Tawin obf`,
-    ];
-    output = `--[[\n${art.join('\n')}\n]]\n` + output;
-  }
+  const art = [
+    ` __  __ ______ _      ____  _   _    ___  ____  _____ ___  _   _ ____ ___  _   _  ____ _____ ___  ____`,
+    `|  \\/  |  ____| |    / __ \\| \\ | |  / _ \\|  _ \\|  __ \\_ _|| | | |  _ \\_ _|| | / / / ___|_   _/ _ \\|  _ \\`,
+    `| \\  / | |__  | |   | |  | |  \\| | | | | | |_) | |  | | | | | | | |_) | | | |/ /  \\___ \\ | || | | | |_) |`,
+    `| |\\/| |  __| | |   | |  | | . \` | | | | |  __/| |  | | | | | | |  _ <| | |    \\  ___) || || | | |  _ <`,
+    `| |  | | |____| |___| |__| | |\\  | | |_| | |   | |__| | | | |_| | |_) | | | |\\  \\|____/ |_| \\___/| |_) |`,
+    `|_|  |_|______|______\\____/|_| \\_|  \\___/|_|   |_____/___|\\___/|____/___| |_| \\_\\                 |____/`,
+    ``,
+  ];
+
+  output = `--[[\n${art.join('\n')}\n]]\n` + output;
+}
 
   if (level !== "debug") {
 
